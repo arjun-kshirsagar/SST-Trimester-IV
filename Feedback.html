@@ -1,0 +1,48 @@
+
+<html>
+
+<head>
+	<title>Faking Textarea on Typing</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="http://www.javascriptbank.com" />
+	<meta name="distribution" content="Global" />
+	<meta name="copyright" content="JavaScriptBank.com" />
+	<script language="javascript">
+var a=new Array(),n=""
+a[1]='I';a[2]='T';a[3]=' ';a[4]='W';a[5]='A';a[6]='S';a[7]=' ';a[8]='A';a[9]='W';a[10]='E';a[11]='S';a[12]='O';a[13]='M';a[14]='E';
+function one()
+{
+t=document.f.txt.value
+j=t.length
+if(j>0)
+{
+for(var i=1;i<=j;i++)
+{
+n=n+a[i]
+if(i==14)
+{
+document.f.txt.value=""
+n=""
+}
+}
+}
+document.f.txt.value=n
+n=""
+setTimeout("one()",1)
+}
+function on()
+{
+one()
+}
+</script>
+</head>
+<body onload="on()">
+<center>
+<h2>Please provide feedback</h2>
+<form name="f">
+<textarea name="txt" cols="20" rows="5">
+</textarea>
+</center>
+</form>
+</body>
+</html
